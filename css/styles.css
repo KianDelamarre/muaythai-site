@@ -14,15 +14,15 @@ h6{
 }
 h1{
     color: var(--secondary);
-    font-size: 40px;
+    font-size: 40px; 
     font-family: 'openSans';
-    margin: 1em 0 0 0;
+    margin: 1em 0 0 0; 
     font-weight: 600;
-}
+} 
 h2{
     color: white;
     font-family: 'openSans';
-    font-size: 22px;
+    font-size: 22px; 
     font-weight: 500;
     letter-spacing: 2px;
     /* margin: 0; */
@@ -249,9 +249,19 @@ address{
 }
 
 #footer-map{
-    width: 300px;
-    height: 200px;
-    background-color: aliceblue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    height: auto;
+    border: 0;
+}
+
+#footer-map iframe{
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
+    border: 0;
 }
 
 #main-content{
