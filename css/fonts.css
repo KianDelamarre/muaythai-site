@@ -1,0 +1,33 @@
+@font-face {
+    font-family: 'didact';
+    src: url('/assets/DidactGothic-Regular.ttf');
+}
+@font-face {
+    font-family: 'babas';
+    src: url('/assets/BebasNeue/BebasNeue-Bold.ttf') ;
+    font-weight: bold;
+}
+@font-face {
+    font-family: 'babas';
+    src: url('/assets/BebasNeue/BebasNeue-Book.ttf') ;
+    font-weight: 200;
+    
+}
+@font-face {
+    font-family: 'babas';
+    src: url('/assets/BebasNeue/BebasNeue-Light.ttf') ;
+    font-weight: 100;
+}
+@font-face {
+    font-family: 'babas';
+    src: url('/assets/BebasNeue/BebasNeue-Regular.ttf') ;
+    font-weight: normal;
+
+}
+
+@font-face {
+    font-family: 'openSans';
+    src: url(/assets/OpenSanst-variable.ttf);
+    font-weight: 100 900;
+    font-stretch: 75% 100%;
+}
