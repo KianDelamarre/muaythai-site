@@ -450,6 +450,31 @@ a {
     
 }
 
+#coaches-slideshow{
+    /* display: flex; */
+
+    width: 100%;
+    /* flex-direction: column; */
+    height: 250px;
+}
+
+.slide-container{
+    position:absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    /* margin-right: auto; */
+    height: 200px;
+
+}
+
+.mySlides{
+    height: 100%;
+    width: auto;
+}
+
 #about-us{
     background-color: white;
     width: 100%;
