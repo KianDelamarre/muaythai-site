@@ -19,30 +19,36 @@ const handleLocation = async () => {
     const html = await fetch(route).then((data) => data.text());
     document.getElementById("main-content").innerHTML = html;
     
+      if (path === "/") {
+        initSlideshowButtons();
+    }
 };
 
 
+function initSlideshowButtons() {
+  const buttons = document.querySelectorAll("[data-slideshow-button]");
+  console.log(document.querySelector("[data-slideshow-button]")); // null? too early
 
 
-var slideIndex = 1;
-showDivs(slideIndex);
+  buttons.forEach(button => {
+    button.addEventListener("click", () => {
+      console.log('button clicked');
+      const offset = button.dataset.slideshowButton === "next" ? 1 : -1;
+      const slides = button.closest("[data-slideshow]").querySelector("[data-slides]");
 
-function plusDivs(n) {
-  showDivs(slideIndex += n);
+      const activeSlide = slides.querySelector("[data-active]");
+      console.log(slides.querySelector("[data-active]"));
+      let newIndex = [...slides.children].indexOf(activeSlide) + offset;
+      console.log(newIndex);
+
+      if (newIndex < 0) newIndex = slides.children.length - 1;
+      if (newIndex >= slides.children.length) newIndex = 0;
+
+      slides.children[newIndex].dataset.active = true;
+      delete activeSlide.dataset.active;
+    });
+  });
 }
-
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("slide-container");
-  if (n > x.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = x.length} ;
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";
-  }
-  x[slideIndex-1].style.display = "flex";
-}
-
-
 
 
 
