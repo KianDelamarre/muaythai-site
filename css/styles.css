@@ -24,13 +24,13 @@ th{
     color: white;
     font-family: 'openSans';
     font-size: 22px; 
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: 2px;
     /* margin: 0; */
 }
 h3, 
 td{
-    color: white[];
+    color: white;
     font-family: 'openSans';
     font-size: 15px;
     font-weight: 400;
