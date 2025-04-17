@@ -21,6 +21,7 @@ const handleLocation = async () => {
     
       if (path === "/") {
         initSlideshowButtons();
+        initSlideShowSwipe();
     }
 };
 
@@ -50,7 +51,92 @@ function initSlideshowButtons() {
   });
 }
 
+function initSlideShowSwipe() {
+  let touchArea = document.getElementById("coaches-slideshow");
 
+  let mouseX,
+    intialX = 0;
+  let mouseY,
+    initalY = 0;
+  let isSwiped;
+
+  let events = {
+    mouse: {
+      down: "mousedown",
+      move: "mousemove",
+      up: "mouseup",
+    },
+    touch: {
+      down: "touchstart",
+      move: "touchmove",
+      up: "touchend",
+    },
+  };
+
+  let deviceType = "";
+
+  const isTouchDevice = () => {
+    try {
+      document.createEvent("TouchEvent");
+      deviceType = "touch";
+      return true;
+    }
+    catch (e) {
+      deviveType = "mouse";
+      return false;
+    }
+  };
+
+  console.log("is touch device? " + isTouchDevice());
+
+  let rectLeft = touchArea.getBoundingClientRect().left;
+  let rectTop = touchArea.getBoundingClientRect().top; 
+
+  const getXY = (e) => {
+    mouseX = (!isTouchDevice() ? e.pageX : e.touches[0].pageX) - rectLeft;
+    mouseY = (!isTouchDevice() ? e.pageY : e.touches[0].pageY) - rectTop;
+  };
+
+  // isTouchDevice();
+
+  touchArea.addEventListener(events[deviveType].down,
+    (event) => {
+      isSwiped = true;
+
+      getXY(event);
+      console.log(mouseX, mouseY);
+      intialX = mouseX;
+      initalY = mouseY;
+    });
+  
+  touchArea.addEventListener(events[deviceType].move,
+    (event) => {
+      if (!isTouchDevice()) {
+        event.preventDefault();
+      }
+      if (isSwiped) {
+        getXY(event);
+        let diffX = mouseX - intialX;
+        let diffY = mouseY - initalY;
+        if (Math.abs(diffY) > Math.abs(diffX)) {
+          console.log("swiped vert");
+        }
+        else {
+          console.log("swiped hor");
+        }
+      }
+    }
+  );
+
+  touchArea.addEventListener(events[deviveType].up, () => {
+    isSwiped = false;
+  });
+
+  touchArea.addEventListener("mouseleave", () => {
+    isSwiped = false;
+  });
+
+}
 
 window.onpopstate = handleLocation;
 window.route = route;

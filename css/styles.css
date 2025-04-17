@@ -19,7 +19,8 @@ h1{
     margin: 1em 0 0 0; 
     font-weight: 600;
 } 
-h2{
+h2, 
+th{
     color: white;
     font-family: 'openSans';
     font-size: 22px; 
@@ -27,7 +28,8 @@ h2{
     letter-spacing: 2px;
     /* margin: 0; */
 }
-h3{
+h3, 
+td{
     color: white[];
     font-family: 'openSans';
     font-size: 15px;
@@ -273,6 +275,7 @@ address{
     display: flex;
     flex-direction: column;
     align-items: center;
+    
 }
 
 #banner{
@@ -456,7 +459,7 @@ a {
 /* ///////// slideshow ////////////////// */
 
 
-.coaches-slideshow{
+#coaches-slideshow{
     /* display: flex; */
     position: relative;
 
@@ -471,7 +474,7 @@ a {
     /* border: thin solid red; */
 }
 
-.coaches-slideshow > ul{
+#coaches-slideshow > ul{
     margin: 0;
     padding: 0;
     /* height: fit-content; */
@@ -601,11 +604,104 @@ a {
 
  /* /////////////////////////////////////////classes page //////////////////////////////////// */
 
- #classes-page{
+ .classes-page{
     width: 100%;
-    height: 20em;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
  }
 
+
+ #prices-section{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #3c3c3c;
+ }
+
+ #prices{
+    width: 100vw;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+ }
+
+ .prices-options{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+    width: 15vw;
+
+    background-color: #2c2c2c;
+ }
+
+ .prices-img-container{
+    width: 100%;
+    height: auto;
+ }
+
+ .prices-img-container img{
+    width: 100%;
+    height: auto;
+ }
+
+ .prices-txt{
+    width: 100%;
+    text-align: center;
+ }
+
+  #timetable-section {
+    background-color: #3c3c3c;
+  }
+
+.timetable {
+    border-collapse: collapse;
+    border: none;
+    width: 70%;
+    height: 30vh;
+    margin-bottom: 60px;
+}
+
+.timetable th{
+    color: var(--secondary);
+}
+
+.timetable td{
+    color: white;
+    font-size: 18px;
+}
+
+/* Only vertical gridlines */
+.timetable th,
+.timetable td {
+    border-right: 1px solid black;
+    padding: 12px 15px;
+    text-align: center;
+    border-top: none;
+    border-bottom: none;
+}
+
+.timetable thead{
+    border-bottom: 1px solid black;
+}
+
+/* Remove left border on first column to avoid outer border */
+.timetable th:first-child,
+.timetable td:first-child {
+    border-left: none;
+}
+
+.timetable th:last-child,
+.timetable td:last-child {
+    border-right: none;
+}
 
   /* /////////////////////////////////////////classes page //////////////////////////////////// */
 
