@@ -621,8 +621,15 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #3c3c3c;
+    background-color: white;
+    margin-bottom: 60px;
  }
+
+  #prices-section h2{
+    color: var(--secondary);
+  }
+
+   #prices-section 
 
  #prices{
     width: 100vw;
@@ -638,8 +645,7 @@ a {
     align-items: center;
     height: fit-content;
     width: 15vw;
-
-    background-color: #2c2c2c;
+    background-color: #3c3c3c;
  }
 
  .prices-img-container{
@@ -706,3 +712,57 @@ a {
   /* /////////////////////////////////////////classes page //////////////////////////////////// */
 
 
+  /* ///////////   info page   ////////////////// */
+
+.info-page{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+#equipment-section h2 {
+    color: var(--secondary);
+}
+
+#equipment-section{
+    background-color: white;
+}
+
+#equip-cards-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.equip-card{
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.equip-img-container{
+    height: 30vh;
+    width: auto;
+}
+
+.equip-img-container > img{
+    height: 100%;
+    width: auto;       
+}
+
+#FAQ-section{
+    background-color: #3c3c3c;
+    height: 20vh;
+}
+
+#FAQ-section h2{
+    color: white;
+}
+
+/*///////////// info page ///////// */
