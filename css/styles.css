@@ -69,6 +69,18 @@ small{
     color: black;
 }
 
+.arrow {
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+  }
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }
+
 
 body{
     width: 100vw;
@@ -169,7 +181,21 @@ body{
     width: fit-content;
     display: flex;
     align-items: center;
+}
 
+
+#logo-title,
+#logo,
+#logo img,
+#logo-title h6 {
+  pointer-events: none;
+}
+
+#navbar > a{
+    width: auto;
+    height: auto;
+    display: block;
+    z-index: 10;
 }
 
 #logo{
@@ -731,10 +757,12 @@ a {
     background-color: white;
 }
 
-#equip-cards-container{
+
+.equip-cards-container{
     width: 100%;
     display: flex;
     justify-content: space-evenly;
+    margin: 30px 0;
 }
 
 .equip-card{
@@ -758,11 +786,33 @@ a {
 
 #FAQ-section{
     background-color: #3c3c3c;
-    height: 20vh;
+    height: fit-content;
 }
 
 #FAQ-section h2{
     color: white;
+}
+
+.faqs-container{
+    display: flex;
+    width: 100%;
+    min-height: fit-content;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.faq{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 40%;
+    /* height: fit-content; */
+    padding: 0 30px;
+    background-color: var(--primary);
+    border-radius: 20px;
+    margin: 30px 0;
 }
 
 /*///////////// info page ///////// */
