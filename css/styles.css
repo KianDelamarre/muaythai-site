@@ -107,6 +107,25 @@ body{
     background-color: white;
 }
 
+#open-menu-btn{
+    display: none;
+    background: none;
+    border: none;
+    padding: 0.5em;
+    margin-left: 0;
+    cursor: pointer;
+    width: fit-content;
+}
+
+#close-menu-btn{
+    display: none;
+    background: none;
+    border: 0;
+    margin: 0;
+    padding: 1em 2em;
+    cursor: pointer;
+}
+
 
 /* /////////////index page ///////////*/
 #top{
@@ -175,9 +194,9 @@ body{
 #ig-img-container{}
 
 #navbar{
-    height: 100%;
+    height: 110px;
     width: 90%;
-    margin: 0.5% 0;
+    margin: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -185,9 +204,11 @@ body{
 
 #logo-title{
     height: 100%;
+    margin: 0;
     width: fit-content;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 
@@ -198,22 +219,23 @@ body{
   pointer-events: none;
 }
 
-#navbar > a{
+#navbar > .title-logo-btn{
     width: auto;
-    height: auto;
+    height: 85%;
     display: block;
     z-index: 10;
 }
 
 #logo{
-    height: 8vh;
+    height: 100%;
     margin-right: 10px;
     
 }
 #logo img{
-    max-height: 100%;
+    height: 100%;
     width: auto;
 }
+
 
 #nav-locations{
     /* position: absolute; */
@@ -223,8 +245,20 @@ body{
     width: fit-content;
     height: 50%;
     overflow: hidden;
-    
+    background-color: var(--primary);
 }
+
+#nav-locations ul{
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+#nav-locations li{
+    display: flex;
+}
+
 .nav-btns{
     height: 2em;
     display: flex;
@@ -407,7 +441,8 @@ a {
 }
 
 #welcome{
-    width: 70%;
+    min-width: 70%;
+    max-width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -851,7 +886,7 @@ input, textarea {
     color: red;
   }
   
-  button {
+  #contact-form button {
     background: #0066cc;
     color: white;
     padding: 0.75rem 1.5rem;
@@ -860,6 +895,78 @@ input, textarea {
     cursor: pointer;
   }
 
-
-
 /* ///////////////////////////// conact page //////////////////////*/
+
+/* mobile phone */
+@media (max-width: 599px) { /* ... */ }
+
+/* Small tablets (600px+) */
+@media (min-width: 600px) { /* ... */ }
+
+/* Tablets (768px+) */
+@media (min-width: 768px) { /* ... */ }
+
+/* Small desktops (1024px+) */
+@media (max-width: 1030px) {
+    #nav-locations{
+        position: fixed;
+        top: 0;
+        /* left: 0; */
+        right: -100%;
+        width: 50vw;
+        height: 100vh;
+        margin: 0;
+        align-items: flex-start;
+        z-index: 10;
+        border-left: 1px solid #5a5a5a;
+        transition: right 300ms ease-out;
+    }
+
+    #nav-locations.show{
+        right: 0;
+    }
+
+    #open-menu-btn{
+        display: block;
+    }
+
+    #close-menu-btn{
+        display: block;
+    }
+
+    #open-menu-btn:hover,
+    #close-menu-btn:hover{
+        background-color: #5a5a5a
+    }
+
+    #nav-locations ul{
+        width: 100%;
+        /* margin-top: 20px; */
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    #nav-locations li{
+        width: 100%;
+        border-bottom: 1px solid #5a5a5a;
+    }
+
+
+
+    .nav-btns{
+        height: 2em;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 1em 2em;
+        color: white;
+        font-size: 30px;
+        width: 100%;
+    }
+}
+
+/* Large desktops (1280px+) */
+@media (min-width: 1280px) { /* ... */ }
+
+

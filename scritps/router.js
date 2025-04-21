@@ -1,3 +1,13 @@
+const navbar=document.getElementById('nav-locations')
+
+function openSidebar(){
+  navbar.classList.add('show')
+}
+
+function closeSidebar(){
+  navbar.classList.remove('show')
+}
+
 const route = (event) => {
     event = event || window.event;
     event.preventDefault();

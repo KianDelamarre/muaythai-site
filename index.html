@@ -49,13 +49,30 @@
                 </div>
             </a>
 
-            <div id="nav-locations">
+            <!-- <div id="nav-locations">
                 <a class="nav-btns" href="/" onclick="route(event)">Home</a>
                 <a class="nav-btns" href="/classes" onclick="route(event)">Classes</a>
                 <a class="nav-btns" href="/info" onclick="route(event)">Information</a>
                 <a class="nav-btns" href="/about" onclick="route(event)">About</a>
                 <a class="contact-us-btn " href="/contact" onclick="route(event)">Contact Us</a>
-            </div>
+            </div> -->
+
+            <button id="open-menu-btn" onclick="openSidebar()">
+                <img src="assets/menu.svg" alt="" height="60px">
+            </button>
+
+            
+
+            <nav id="nav-locations">
+                <ul>
+                    <li><button id="close-menu-btn" onclick="closeSidebar()"><img src="assets/close.svg" alt="" height="80px"></button></li>
+                    <li><a class="nav-btns" href="/" onclick="route(event)">Home</a></li>
+                    <li><a class="nav-btns" href="/classes" onclick="route(event)">Classes</a></li>
+                    <li><a class="nav-btns" href="/info" onclick="route(event)">Information</a></li>
+                    <li><a class="nav-btns" href="/about" onclick="route(event)">About</a></li>
+                    <li><a class="nav-btns contact-us-btn " href="/contact" onclick="route(event)">Contact Us</a></li>
+                </ul>
+            </nav>
         </div>
 
 
