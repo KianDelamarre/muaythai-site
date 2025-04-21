@@ -785,8 +785,10 @@ a {
 
 .equip-cards-container{
     width: 100%;
+    height: fit-content;
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
     margin: 30px 0;
 }
 
@@ -804,7 +806,7 @@ a {
     width: auto;
 }
 
-.equip-img-container > img{
+.equip-img-container img{
     height: 100%;
     width: auto;       
 }
@@ -964,6 +966,18 @@ input, textarea {
         font-size: 30px;
         width: 100%;
     }
+
+
+    .equip-img-container{
+        height: 15vh;
+    }
+
+    .p{
+        width: 90%;
+        text-align: center;
+        text-wrap: wrap;
+    }
+
 }
 
 /* Large desktops (1280px+) */
