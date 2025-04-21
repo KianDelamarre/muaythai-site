@@ -49,23 +49,12 @@
                 </div>
             </a>
 
-            <!-- <div id="nav-locations">
-                <a class="nav-btns" href="/" onclick="route(event)">Home</a>
-                <a class="nav-btns" href="/classes" onclick="route(event)">Classes</a>
-                <a class="nav-btns" href="/info" onclick="route(event)">Information</a>
-                <a class="nav-btns" href="/about" onclick="route(event)">About</a>
-                <a class="contact-us-btn " href="/contact" onclick="route(event)">Contact Us</a>
-            </div> -->
-
-            <button id="open-menu-btn" onclick="openSidebar()" aria-label="open sidebar" aria-controls="navbar">
+            <button id="open-menu-btn" onclick="openSidebar()">
                 <img src="assets/menu.svg" alt="" height="60px">
             </button>
-
-            
-
             <nav id="nav-locations">
                 <ul>
-                    <li><button id="close-menu-btn" onclick="closeSidebar()" aria-label="close sidebar"><img src="assets/close.svg" alt="" height="80px"></button></li>
+                    <li><button id="close-menu-btn" onclick="closeSidebar()"><img src="assets/close.svg" alt="" height="80px"></button></li>
                     <li><a class="nav-btns" href="/" onclick="route(event)">Home</a></li>
                     <li><a class="nav-btns" href="/classes" onclick="route(event)">Classes</a></li>
                     <li><a class="nav-btns" href="/info" onclick="route(event)">Information</a></li>
@@ -75,10 +64,7 @@
             </nav>
             <div id="overlay" onclick="closeSidebar()" aria-hidden="true"></div>
         </div>
-        
     </div>
-
-    
 
     <div id="main-content"></div>
 
