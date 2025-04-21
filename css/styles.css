@@ -85,6 +85,19 @@ small{
     -webkit-transform: rotate(45deg);
   }
 
+  .h-line{
+    width: 100%;
+    margin: none;
+    /* border-bottom: solid thin white; */
+}
+
+.white{
+    border-bottom: solid thin white;
+}
+
+.dark{
+    border-bottom: solid thin var(--primary);
+}
 
 body{
     width: 100vw;
@@ -94,6 +107,8 @@ body{
     background-color: white;
 }
 
+
+/* /////////////index page ///////////*/
 #top{
     width: 100vw;
     height: fit-content;
@@ -154,19 +169,7 @@ body{
     justify-content: space-between;
     width: 5%;
 }
-.h-line{
-    width: 100%;
-    margin: none;
-    /* border-bottom: solid thin white; */
-}
 
-.white{
-    border-bottom: solid thin white;
-}
-
-.dark{
-    border-bottom: solid thin var(--primary);
-}
 #fb-img-container{}
 
 #ig-img-container{}
@@ -308,6 +311,10 @@ address{
     
 }
 
+/* /////////////index page ///////////*/
+
+/* ////////////home page////////////////// */
+
 #banner{
     position: relative;
     width: 100%;
@@ -383,7 +390,6 @@ a {
     border-bottom: solid thin var(--primary);
 }
 
-
 .subheading-title-bar{
     width: 90%;
     margin: 60px 0;
@@ -400,7 +406,6 @@ a {
     padding: 0 3%;
 }
 
-
 #welcome{
     width: 70%;
     display: flex;
@@ -409,8 +414,6 @@ a {
     
     margin: 50px 0;
 }
-
-
 
 #classes{
     display: flex;
@@ -482,12 +485,7 @@ a {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
 }
-
-
-/* ///////// slideshow ////////////////// */
-
 
 #coaches-slideshow{
     /* display: flex; */
@@ -607,39 +605,8 @@ a {
 }
 
 
+/* ////////////home page////////////////// */
 
-
-/* ///////// slideshow ////////////////// */
-
-
-#about-us{
-    background-color: white;
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#about-us h1{
-    margin-top: 20px;
-}
-
-#about-us-text{
-    width: 80%;
-}
-
-#about-us-read-more-button{
-    background-color: var(--secondary);
-    width: 10%;
-    height: auto;
-    margin-bottom: 20px;
-}
-
-#about-us-read-more-button h3{
-    color: white;
-    margin: 10px 0;
-}
 
 #timetable{
     width: 100%;
