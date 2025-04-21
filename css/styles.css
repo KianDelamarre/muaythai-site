@@ -223,7 +223,7 @@ body{
     width: auto;
     height: 85%;
     display: block;
-    z-index: 10;
+    z-index: 2;
 }
 
 #logo{
@@ -283,6 +283,14 @@ body{
 }
 .contact-us-btn:hover{
     background-color: #1c77ff;
+}
+
+#overlay{
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    inset: 0;
+    z-index: 9;
+    display: none;
 }
 
 footer{
@@ -926,6 +934,9 @@ input, textarea {
 
     #nav-locations.show{
         right: 0;
+    }
+    #nav-locations.show ~ #overlay{
+        display: block;
     }
 
     #open-menu-btn{
