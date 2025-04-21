@@ -978,9 +978,15 @@ input, textarea {
         text-wrap: wrap;
     }
 
+
+
 }
 
 /* Large desktops (1280px+) */
-@media (min-width: 1280px) { /* ... */ }
+@media (max-width: 1280px) {
+    .faq{
+        width: 85%;
+    }
+}
 
 
