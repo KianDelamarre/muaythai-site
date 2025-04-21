@@ -1,4 +1,4 @@
 # muaythai-site
 
 npm install -g live-server
-live-server --entry-file=index.html
+live-server --host=0.0.0.0 --entry-file=index.html
