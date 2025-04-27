@@ -41,97 +41,80 @@ function initButton() {
   const slideShow = document.getElementById("coaches-slideshoww");
   const nextBtn = document.querySelector("[data-slideshow-next]");
   const prevBtn = document.querySelector("[data-slideshow-prev]");
+  const numberOfSlides = document.querySelectorAll('.slide-container').length;
+  const secondLastIndex = numberOfSlides - 2;
 
-  let stopScroll = false;
+  let isScrolling;
 
+  slideShow.scrollTo({
+    left: 1 * slideShow.clientWidth,
+    behavior: "instant"
+  });
 
   function handleInfiniteScroll() {
 
-
+    console.log(slideShow.scrollWidth);
+    console.log(slideShow.clientWidth);
+    console.log(slideShow.scrollLeft);
 
     if (slideShow.scrollLeft === slideShow.scrollWidth - slideShow.clientWidth) {
-      stopScroll = true;
+
+      console.log("infite scroll");
       slideShow.scrollTo({
-        left: -slideShow.scrollWidth,
-        behavior: "smooth"
+        left: 1 * slideShow.clientWidth,
+        behavior: "instant"
       });
     }
     else if (slideShow.scrollLeft === 0) {
-      stopScroll = true;
+
+      console.log("infite scroll");
       slideShow.scrollTo({
-        left: slideShow.scrollWidth,
-        behavior: "smooth"
+        left: secondLastIndex * slideShow.clientWidth,
+        behavior: "instant"
       });
     }
 
-    if (stopScroll) return;
+
   }
 
+
+  //next button
   nextBtn.addEventListener("click", () => {
     console.log("next button clicked");
-    if (slideShow.scrollLeft === slideShow.scrollWidth - slideShow.clientWidth) {
-      slideShow.scrollTo({
-        left: -slideShow.scrollWidth,
-        behavior: "smooth"
-      })
-    }
-    else {
-      slideShow.scrollBy({
-        left: window.innerWidth,
-        behavior: "smooth"
-      })
-    }
-    scrollNext();
+    slideShow.scrollBy({
+      left: window.innerWidth,
+      behavior: "smooth"
+    })
   });
 
+  ///
   prevBtn.addEventListener("click", () => {
     console.log("prev button clicked");
-    if (slideShow.scrollLeft === 0) {
-      slideShow.scrollTo({
-        left: slideShow.scrollWidth,
-        behavior: "smooth"
-      })
-    }
-    else {
-      slideShow.scrollBy({
-        left: -window.innerWidth,
-        behavior: "smooth"
-      })
-    }
+    slideShow.scrollBy({
+      left: -window.innerWidth,
+      behavior: "smooth"
+    })
   });
+
+
 
   slideShow.addEventListener('scroll', () => {
-    // if (slideShow.scrollLeft !== 0 && slideShow.scrollLeft !== slideShow.scrollWidth - slideShow.clientWidth) {
-    //   stopScroll = false;
-    // }
-    handleInfiniteScroll();
-    stopScroll = false;
+    //Cancel any previous "waiting to check" timer
+    window.clearTimeout(isScrolling)
+
+    isScrolling = setTimeout(() => {
+      handleInfiniteScroll();
+    }, 10);
   });
-}
 
-function initSlideshowButtons() {
-  const buttons = document.querySelectorAll("[data-slideshow-button]");
-  console.log(document.querySelector("[data-slideshow-button]")); // null? too early
-
-
-  buttons.forEach(button => {
-    button.addEventListener("click", () => {
-      console.log('button clicked');
-      const offset = button.dataset.slideshowButton === "next" ? 1 : -1;
-      const slides = button.closest("[data-slideshow]").querySelector("[data-slides]");
-
-      const activeSlide = slides.querySelector("[data-active]");
-      console.log(slides.querySelector("[data-active]"));
-      let newIndex = [...slides.children].indexOf(activeSlide) + offset;
-      console.log(newIndex);
-
-      if (newIndex < 0) newIndex = slides.children.length - 1;
-      if (newIndex >= slides.children.length) newIndex = 0;
-
-      slides.children[newIndex].dataset.active = true;
-      delete activeSlide.dataset.active;
+  function autoScroll() {
+    slideShow.scrollBy({
+      left: window.innerWidth,
+      behavior: "smooth"
     });
-  });
+  }
+
+  setInterval(autoScroll, 20000);
 }
 
 window.onpopstate = handleLocation;

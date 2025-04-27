@@ -567,7 +567,12 @@ a {
     /* overflow-y: hidden; */
     scroll-snap-type: x mandatory;
 
-    box-sizing: border-box
+    box-sizing: border-box;
+    scrollbar-width: none;
+}
+
+#coaches-slideshoww::-webkit-scrollbar{
+    /* display: none; */
 }
 
 #coaches-slideshow > ul{
@@ -611,13 +616,8 @@ a {
  
     height: fit-content;
     /* border: solid blue; */
-    margin: 60px 0;
+    margin-bottom: 60px;
     scroll-snap-align: start;
-}
-
-.slide-container.duplicate {
-    visibility: hidden;
-    /* Hide the duplicate slides */
 }
 
 .slide-container:last-child {
@@ -1035,6 +1035,10 @@ input, textarea {
 @media (max-width: 1280px) {
     .faq{
         width: 85%;
+    }
+
+    .slideshow-button{
+        display: none;
     }
 }
 
