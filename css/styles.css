@@ -554,6 +554,22 @@ a {
     /* border: thin solid red; */
 }
 
+#coaches-slideshoww {
+    position:relative;
+
+    display: flex;
+    /* height: fit-content; */
+    /* border: solid 2px black; */
+    /* gap: 1em; */
+    width: 100%;
+    /* overflow-x: scroll; */
+    overflow-x: scroll;
+    /* overflow-y: hidden; */
+    scroll-snap-type: x mandatory;
+
+    box-sizing: border-box
+}
+
 #coaches-slideshow > ul{
     margin: 0;
     padding: 0;
@@ -568,7 +584,7 @@ a {
     justify-content:space-between;
     align-items: center;
     height: fit-content;
-    width: 100vw;
+    width: fit-content;
     inset: 0;
     opacity: 0;
     transition: 300ms opacity ease-in-out;
@@ -586,14 +602,27 @@ a {
 .slide-container{
     /* position:absolute; */
     display: flex;
+    flex-shrink: 0;
     /* inset: 0; */
     /* flex-direction: column; */
     justify-content: center;
     align-items: center;
-    width: 100%;
-    margin: 60px 0;
+    width: 100vw;
+ 
     height: fit-content;
     /* border: solid blue; */
+    margin: 60px 0;
+    scroll-snap-align: start;
+}
+
+.slide-container.duplicate {
+    visibility: hidden;
+    /* Hide the duplicate slides */
+}
+
+.slide-container:last-child {
+    scroll-snap-align: end;
+    /* Align the last slide to the end */
 }
 
 .slide-container h2, 
@@ -608,7 +637,7 @@ a {
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
-    max-width: 30%;
+    min-width: 30%;
     height: 100%;
     margin: 0 20px;
 }
@@ -624,7 +653,7 @@ a {
 }
 
 .slideshow-button{
-    position: absolute;
+    position: relative;
     z-index: 3;
     background: none;
     border: none;
@@ -666,7 +695,7 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: white;
+    /* background-color: white; */
     
 }
 
