@@ -44,6 +44,7 @@ function initButton() {
   const numberOfSlides = document.querySelectorAll('.slide-container').length;
   const secondLastIndex = numberOfSlides - 2;
 
+  let autoScrollTimer = setInterval(autoScroll, 20000);
   let isScrolling;
 
   slideShow.scrollTo({
@@ -101,6 +102,7 @@ function initButton() {
   slideShow.addEventListener('scroll', () => {
     //Cancel any previous "waiting to check" timer
     window.clearTimeout(isScrolling)
+    resetAutoScroll()
 
     isScrolling = setTimeout(() => {
       handleInfiniteScroll();
@@ -114,7 +116,12 @@ function initButton() {
     });
   }
 
-  setInterval(autoScroll, 20000);
+  function resetAutoScroll() {
+    clearInterval(autoScrollTimer);
+    autoScrollTimer = setInterval(autoScroll, 20000);
+  }
+
+
 }
 
 window.onpopstate = handleLocation;
