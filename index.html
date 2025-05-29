@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <head>
     <title>Northern Spirit Muay Thai</title>
@@ -29,12 +30,17 @@
                     </div>
                 </div>
                 <div id="socials-icons">
-                    <div id="fb-img-contaier">
-                        <img src="/assets/facebook-white-20.png" alt="fb">
-                    </div>
-                    <div id="ig-img-container">
-                        <img src="/assets/instagram-white-20.png" alt="ig">
-                    </div>
+                    <a href="https://www.facebook.com/northernspiritmuaythai/">
+                        <div class="socials-img-contaier">
+                            <img src="/assets/facebook-white-20.png" alt="fb">
+                        </div>
+                    </a>
+
+                    <a href="https://www.instagram.com/northernspiritmuaythai/?hl=en">
+                        <div class="socials-img-contaier">
+                            <img src="/assets/instagram-white-20.png" alt="ig">
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -50,12 +56,12 @@
             </a>
 
             <button id="open-menu-btn" onclick="openSidebar()">
-                <img src="assets/menu.svg" alt="" height="60px">
+                <img src="assets/menu.svg" alt="" height="50px">
             </button>
             <nav id="nav-locations">
                 <ul>
                     <li><button id="close-menu-btn" onclick="closeSidebar()"><img src="assets/close.svg" alt=""
-                                height="80px"></button></li>
+                                height="50px"></button></li>
                     <li><a class="nav-btns" href="/" onclick="route(event)">Home</a></li>
                     <li><a class="nav-btns" href="/classes" onclick="route(event)">Classes</a></li>
                     <li><a class="nav-btns" href="/info" onclick="route(event)">Information</a></li>
@@ -98,7 +104,6 @@
             </div>
         </div>
 
-        </div>
     </footer>
 
     <script src="/scritps/router.js"></script>
