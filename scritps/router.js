@@ -31,6 +31,9 @@ const handleLocation = async () => {
   const html = await fetch(route).then((data) => data.text());
   document.getElementById("main-content").innerHTML = html;
 
+  closeSidebar();
+
+
   if (path === "/") {
     // initSlideshowButtons();
     initButton();
