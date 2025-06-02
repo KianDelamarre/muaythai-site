@@ -6,6 +6,10 @@
     /* 3779df */
 }
 
+/* html {
+    font-size: clamp(14px, 2.5vw, 16px);
+} */
+
 h6 {
     color: var(--secondary);
     font-size: 2.5rem;
@@ -51,7 +55,7 @@ h4 {
 }
 
 p {
-    font-size: 1rem;
+    /* font-size: 1rem; */
     line-height: 1.8;
     text-align: center;
 }
@@ -183,10 +187,16 @@ body {
 #location-img {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    width: fit-content;
+    gap: 0.3rem;
 }
 
 #location-img-container {
-    margin-right: 2%;
+    /* margin-right: 0.5rem; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #location-text {
@@ -197,18 +207,27 @@ body {
 #phone-img {
     display: flex;
     justify-content: space-between;
-    width: 7%;
+    justify-content: space-between;
+    align-items: center;
+    width: fit-content;
+    gap: 0.3rem;
+
 }
 
-#phone-img-container {}
+#phone-img-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 #phone-number {}
 
 #socials-icons {
     display: flex;
     justify-content: space-between;
-    width: 5%;
+    width: fit-content;
     flex-grow: none;
+    gap: 0.5rem;
 }
 
 #socials-icons a {
@@ -353,6 +372,10 @@ address {
     display: flex;
     flex-direction: column;
     margin: 2rem;
+}
+
+address a {
+    justify-content: start;
 }
 
 #footer-nav {}
@@ -886,8 +909,8 @@ a {
 
 .faqs-container details {
     background: var(--primary);
-    padding: 0 30px;
-    border-radius: 20px;
+    padding: 0 2rem;
+    border-radius: 1.5rem;
     overflow: hidden;
     width: 100%;
 }
@@ -908,6 +931,31 @@ a {
 
 .faq summary {
     list-style-position: outside;
+    display: flex;
+    align-items: center;
+    justify-content: cent;
+    gap: 0.5rem;
+    width: 100%;
+    cursor: pointer;
+    list-style: none;
+}
+
+.faq summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::before {
+    content: "\27A4";
+    /* font-size: 2rem; */
+    /* align-items: centre; */
+    /* line-height: 2rem; */
+    /* display: inline-block; */
+    transform: rotate(0deg);
+    transition: transform 0.2s ease;
+}
+
+details[open] summary::before {
+    transform: rotate(90deg);
 }
 
 /*///////////// info page ///////// */
@@ -977,9 +1025,6 @@ textarea {
         flex-wrap: wrap;
     }
 
-
-
-
     #footer-map iframe {
         width: 70vw;
         height: auto;
@@ -990,6 +1035,10 @@ textarea {
 
     html {
         font-size: 10px;
+    }
+
+    h4 {
+        font-size: 20px;
     }
 
     #navbar {
@@ -1086,6 +1135,14 @@ textarea {
 
 /* Small desktops (1024px+) */
 @media (max-width: 1030px) {
+
+    p {
+        font-size: 16px;
+    }
+
+    small {
+        font-size: 12px;
+    }
 
     .show-desktop {
         display: none;
