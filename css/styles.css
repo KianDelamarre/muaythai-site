@@ -561,7 +561,6 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-
     margin: 3rem 0;
 }
 
@@ -641,6 +640,12 @@ a {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+#slideshow-section {
+    width: 100%;
+    height: fit-content;
+    box-shadow: 0 0 5px rgb(255, 255, 255);
 }
 
 #slideshow-container {
