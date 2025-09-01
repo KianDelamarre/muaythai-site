@@ -373,12 +373,14 @@ footer {
     width: 100%;
     /* margin: 3em 0; */
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 2rem;
 }
 
-#footer-address {}
+#footer-address {
+    width: 100%;
+}
 
 address {
     display: flex;
@@ -396,10 +398,11 @@ address a {
 }
 
 #footer-nav-opentimes {
-    width: auto;
+    width: 100%;
     display: flex;
+    justify-content: space-around;
     margin-block: 2rem 2rem;
-    gap: 5rem;
+    /* gap: 5rem; */
 }
 
 #footer-nav-opentimes small,
