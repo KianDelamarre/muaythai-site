@@ -117,13 +117,16 @@ small {
 
 body {
     width: 100vw;
+    height: fit-content;
     margin: 0;
     font-family: 'openSans';
     /* background-color: var(--primary);
     background-color: white; */
     background-image: url(/assets/background-1.png);
     background-position: center;
+    overflow-x: hidden;
     /* background-repeat:repeat-y; */
+    position: absolute;
 }
 
 .show-mobile {
@@ -161,6 +164,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: sticky;
+    top: -132px;
 }
 
 #location-contact-bckgrnd {
@@ -348,7 +353,7 @@ body {
 }
 
 footer {
-    /* position:relative; */
+    position: absolute;
     width: 100%;
     background-color: var(--primary);
     height: fit-content;
@@ -359,6 +364,7 @@ footer {
 }
 
 #footer {
+
     width: 80%;
     margin: 3em 0;
     display: flex;
@@ -452,13 +458,15 @@ address a {
 
 #main-content {
     width: 100%;
-    min-height: 60vh;
+    /* min-height: 100%; */
+    /* height: fit-content; */
     position: relative;
     background-color: none;
     display: flex;
     flex-direction: column;
     align-items: center;
-
+    /* padding-bottom: 1000px; */
+    /* padding-bottom: 1000px; */
 }
 
 /* /////////////index page ///////////*/
@@ -590,11 +598,27 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 20vw;
+    border: solid var(--primary);
+    width: fit-content;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+.class-card:hover {
+    /* border: solid black; */
+    background-color: #3c3c3c;
+}
+
+.class-card h4 {
+    margin: 0;
 }
 
 .class-img-container {
-    width: 100%;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    /* padding: 2rem; */
+    width: 17vw;
     height: auto;
 }
 
@@ -642,6 +666,89 @@ a {
     align-items: center;
     justify-content: center;
 }
+
+.class-card-more-info {
+    position: absolute;
+    transform: translateY(-4rem);
+    /* display: flex; */
+    flex-direction: column;
+    align-items: center;
+    width: 22vw;
+    padding: 2rem;
+    gap: 2rem;
+    border-radius: 10px;
+    background-color: var(--primary);
+    box-shadow: 0 0 20px #5a5a5a;
+    /* opacity: 0; */
+    /* scale: 0; */
+    /* pointer-events: none; */
+    display: none;
+    /* scale: 0; */
+    /* box-shadow: 0 0 5px rgb(255, 255, 255); */
+
+}
+
+.show {
+    display: flex;
+    /* pointer-events: auto; */
+    animation-duration: 0.5s;
+    animation-name: grow;
+    /* opacity: 1; */
+}
+
+.hide {
+    /* display: none; */
+    /* display: flex; */
+    /* display: none; */
+    animation-duration: 0.5s;
+    animation-name: shrink;
+}
+
+@keyframes grow {
+    0% {
+        scale: 0;
+        /* opacity: 0; */
+    }
+
+    100% {
+        scale: 1;
+        /* opacity: 1; */
+    }
+}
+
+@keyframes shrink {
+    0% {
+        scale: 1;
+        /* opacity: 1; */
+    }
+
+    100% {
+        scale: 0;
+        /* opacity: 0; */
+        /* display: none; */
+    }
+}
+
+.class-card-more-info h4 {
+    margin: 0;
+}
+
+.classes-more-info-img-container {
+    width: 15vw;
+}
+
+.class-card-more-info p {
+    color: white;
+    margin: 0;
+}
+
+.classes-more-info-img-container img {
+    width: 100%;
+    height: auto;
+}
+
+
+
 
 #slideshow-section {
     width: 100%;
@@ -815,16 +922,19 @@ a {
     height: fit-content;
     width: 15rem;
     background-color: #3c3c3c;
+    border-radius: 10px;
 }
 
 .prices-img-container {
     width: 100%;
     height: auto;
+    border-radius: 10px;
 }
 
 .prices-img-container img {
     width: 100%;
     height: auto;
+    border-radius: 10px;
 }
 
 .prices-txt {
@@ -901,7 +1011,9 @@ a {
     color: var(--secondary);
 }
 
-#equipment-section {}
+#equipment-section {
+    position: sticky;
+}
 
 
 .equip-cards-container {
@@ -939,6 +1051,7 @@ a {
 #FAQ-section {
     background-color: #3c3c3c;
     height: fit-content;
+    position: sticky;
 }
 
 #FAQ-section h2 {
@@ -1017,6 +1130,17 @@ summary::before {
 
 details[open] summary::before {
     transform: rotate(90deg);
+}
+
+#spacer {
+    display: flex;
+    z-index: 200;
+    background-color: #0066cc;
+    /* padding: 300px; */
+    width: 100%;
+    height: 100px;
+
+    position: relative
 }
 
 /*///////////// info page ///////// */
@@ -1321,7 +1445,7 @@ textarea {
     }
 
     #nav-locations {
-        position: fixed;
+        /* position: fixed; */
         top: 0;
         /* left: 0; */
         right: -100%;

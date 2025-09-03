@@ -1,5 +1,9 @@
 const navbar = document.getElementById('nav-locations')
-
+const topSectn = document.getElementById('top')
+const mainPage = document.getElementById('main-content')
+const mainPagePos = topSectn.offsetHeight
+mainPage.style.top = mainPagePos
+const footer = document.querySelector('footer');
 function openSidebar() {
   navbar.classList.add('show')
 }
@@ -37,8 +41,12 @@ const handleLocation = async () => {
 
 
   if (path === "/") {
+    initHomePageClasses()
     initButton();    // initalise slideshow buttons only when on home page
     console.log("slideshow");
+  }
+  if (path === "/info") {
+    initInfoPage()
   }
   else if (path === "/blog") {
     initBlogSection();
@@ -46,6 +54,80 @@ const handleLocation = async () => {
 };
 
 /////////   router //////////////////////
+
+//////////// home page classes section ////////////////////
+function initHomePageClasses() {
+  const adultsMixed = document.getElementById('adults-mixed-card')
+  const adultMixedInfo = document.getElementById('adults-mixed-more-info')
+
+  const womensOnly = document.getElementById('womens-only-card')
+  const womensOnlyInfo = document.getElementById('womens-only-more-info')
+
+  const youths = document.getElementById('youths-card')
+  const youthsInfo = document.getElementById('youths-more-info')
+
+
+  const tinyThais = document.getElementById('tiny-thais-card')
+  const tinyThaisInfo = document.getElementById('tiny-thais-more-info')
+
+
+  initShowHideCards(adultsMixed, adultMixedInfo)
+  initShowHideCards(womensOnly, womensOnlyInfo)
+  initShowHideCards(youths, youthsInfo)
+  initShowHideCards(tinyThais, tinyThaisInfo)
+
+  let delay = 800
+  let isVisible = false
+
+  function initShowHideCards(triggerElement, infoElement) {
+    let hoverTimeout = null;
+
+    triggerElement.addEventListener('mouseenter', () => {
+      if (!isVisible && !hoverTimeout) {
+        hoverTimeout = setTimeout(() => {
+          showMoreInfo(infoElement)
+          isVisible = true;
+        }, delay)
+      }
+    })
+
+    triggerElement.addEventListener('mouseleave', () => {
+      if (hoverTimeout != null) {
+        clearTimeout(hoverTimeout)
+        hoverTimeout = null
+      }
+      if (isVisible) {
+        hideMoreInfo(infoElement)
+        isVisible = false;
+      }
+    })
+  }
+
+  function showMoreInfo(info) {
+    info.classList.remove('hide')
+    info.classList.add('show')
+    console.log(`showing`)
+  }
+
+  function hideMoreInfo(info) {
+    info.classList.add('hide')
+
+    info.addEventListener('animationend', () => {
+      info.classList.remove('show')
+      // info.classList.remove('hide')
+    }, { once: true })
+
+
+    console.log(`hiding`)
+
+    // setTimeout(() => hide(info), 2000)
+    // function hide(info) {
+    //   info.style.display = 'none'
+    // }
+  }
+}
+
+//////////// home page classes section ////////////////////
 
 ////////   coaches slideshow section /////////////////
 function initButton() {
@@ -86,8 +168,6 @@ function initButton() {
         behavior: "instant"
       });
     }
-
-
   }
 
 
@@ -353,7 +433,31 @@ function initBlogSection() {
 
 };
 
+//////////// info page /////////////////
+function initInfoPage() {
 
+  const eqpSectn = document.getElementById('equipment-section')
+  const faqSectn = document.getElementById('FAQ-section')
+
+  const spacer = document.getElementById('spacer')
+
+  const faqSectnPos = eqpSectn.offsetHeight;
+  const spacerPos = faqSectn.offsetHeight + eqpSectn.offsetHeight
+  const footerPos = faqSectn.offsetHeight + navbar + mainPagePos;
+
+  eqpSectn.style.top = (-2 * mainPagePos) + 'px'
+  faqSectn.style.top = faqSectnPos + 'px'
+
+  // spacer.style.paddingTop = footer.offsetHeight / 2 + 'px'
+  // spacer.style.top = spacerPos + 'px'
+  // spacer.style.height = footer.offsetHeight + 'px'
+
+  // mainPage.style.height = 'fit-content'
+
+  // footer.style.top = footerPos + 'px'
+  console.log(eqpSectn.getBoundingClientRect().top, faqSectn.getBoundingClientRect().top, faqSectn.offsetHeight, footer.getBoundingClientRect().top)
+}
+//////////// info page /////////////////
 
 
 /////////////////////// blog page /////////////////////////////////////
