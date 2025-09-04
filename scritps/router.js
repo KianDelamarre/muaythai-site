@@ -5,11 +5,13 @@ const mainPagePos = topSectn.offsetHeight
 mainPage.style.top = mainPagePos
 const footer = document.querySelector('footer');
 function openSidebar() {
-  navbar.classList.add('show')
+  document.body.classList.add('no-scroll')
+  navbar.classList.add('show-nav')
 }
 
 function closeSidebar() {
-  navbar.classList.remove('show')
+  document.body.classList.remove('no-scroll')
+  navbar.classList.remove('show-nav')
 }
 
 /////////   router //////////////////////
@@ -46,7 +48,7 @@ const handleLocation = async () => {
     console.log("slideshow");
   }
   if (path === "/info") {
-    initInfoPage()
+    // initInfoPage()
   }
   else if (path === "/blog") {
     initBlogSection();
@@ -104,17 +106,17 @@ function initHomePageClasses() {
   }
 
   function showMoreInfo(info) {
-    info.classList.remove('hide')
-    info.classList.add('show')
+    info.classList.remove('hide-class-more-info')
+    info.classList.add('show-class-more-info')
     console.log(`showing`)
   }
 
   function hideMoreInfo(info) {
-    info.classList.add('hide')
+    info.classList.add('hide-class-more-info')
 
     info.addEventListener('animationend', () => {
-      info.classList.remove('show')
-      // info.classList.remove('hide')
+      info.classList.remove('show-class-more-info')
+      // info.classList.remove('hide-class-more-info')
     }, { once: true })
 
 
@@ -126,7 +128,6 @@ function initHomePageClasses() {
     // }
   }
 }
-
 //////////// home page classes section ////////////////////
 
 ////////   coaches slideshow section /////////////////
@@ -218,6 +219,7 @@ function initButton() {
 
 
 }
+////////   coaches slideshow section /////////////////
 
 function initBlogSection() {
   const blogPostsSection = document.getElementById('blog-posts-section');
