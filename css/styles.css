@@ -586,8 +586,13 @@ a {
     flex-direction: column;
     align-items: center;
     background-color: var(--primary);
+    background-image: url('/assets/background.svg');
     width: 100%;
     padding-block: 2rem;
+}
+
+.no-background {
+    background-color: #00000000;
 }
 
 #classes p,
@@ -603,7 +608,7 @@ a {
 }
 
 #classes h4 {
-    font-weight: bolder;
+    /* font-weight: bolder; */
 }
 
 #classes-cards-wrapper {
@@ -623,7 +628,7 @@ a {
     /* justify-content: space-between; */
     overflow-x: scroll;
     /* overflow-y: hidden; */
-    scroll-snap-type: x mandatory;
+    /* scroll-snap-type: x mandatory; */
 }
 
 /* #classes-cards>:last-child {
@@ -640,7 +645,7 @@ a {
 
 .class-card-container {
     box-sizing: border-box;
-    border: solid 1rem var(--primary);
+    border: solid 1rem #00000000;
     min-width: 33.33%;
     max-width: 33.33%;
     height: 100%;
@@ -655,6 +660,7 @@ a {
     flex-direction: column;
     align-items: center;
     border: solid thin #3c3c3c;
+    background-color: var(--primary);
     padding-bottom: 1rem;
     width: 100%;
     /* height: 100%; */
@@ -697,7 +703,7 @@ a {
 
 
 #beginners-title-img {
-    width: 55%;
+    width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -742,7 +748,7 @@ a {
 .book-now {
     color: white;
     background-color: var(--secondary);
-    padding: 0.8rem;
+    padding: 0.8rem 1.2rem;
     border-radius: 2px;
 }
 
@@ -978,9 +984,12 @@ a {
     align-items: center;
 }
 
-
 #classes-section {
-    /* background-color: var(--primary); */
+    width: 100vw;
+}
+
+#classes-page-section {
+    width: 90%;
 }
 
 #classes-section h2 {
@@ -989,6 +998,11 @@ a {
 
 #classes-section h4 {
     color: black;
+}
+
+.class-section {
+    display: flex;
+    justify-content: space-between;
 }
 
 .img-right {
@@ -1360,6 +1374,10 @@ textarea {
     padding: 1vw;
     width: 99vw;
     /* height: fit-content; */
+}
+
+#blog-posts-section img {
+    width: 24vw;
 }
 
 .post {
@@ -1753,6 +1771,10 @@ textarea {
         height: 20rem;
     }
 
+    #classes {
+        /* background-image: none; */
+    }
+
     #classes p,
     #classes h4 {
         text-align: center;
@@ -1782,7 +1804,7 @@ textarea {
         padding-bottom: 1.5rem;
         border: 0;
         gap: 2rem;
-
+        background-color: #00000000
     }
 
     .class-img-container {
@@ -1800,7 +1822,7 @@ textarea {
     }
 
     #class-beginners h4 {
-        font-weight: bolder;
+        /* font-weight: bolder; */
     }
 
     #beginners-title-img {
