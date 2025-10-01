@@ -1,9 +1,47 @@
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+import {
+  getFirestore,
+  collection,
+  getDocs
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCym8mNsgOsZ-IFE9F8qTR5km4edVekZt8",
+  authDomain: "mauy-thai-site.firebaseapp.com",
+  projectId: "mauy-thai-site",
+  storageBucket: "mauy-thai-site.firebasestorage.app",
+  messagingSenderId: "900680878067",
+  appId: "1:900680878067:web:c7ed2f0779ce258ac63486",
+  measurementId: "G-H0R5XCKTT0"
+};
+
+initializeApp(firebaseConfig)
+
+const db = getFirestore()
+
+const collectionReference = collection(db, 'posts')
+
+getDocs(collectionReference)
+  .then((snapshot) => {
+    console.log(snapshot.docs)
+    let posts = []
+    snapshot.docs.forEach((post) => {
+      posts.push({ ...post.data(), id: post.id })
+    })
+    console.log(posts)
+  })
+  .catch(err => {
+    console.log(err.message)
+  })
+
 const navbar = document.getElementById('nav-locations')
 const topSectn = document.getElementById('top')
 const mainPage = document.getElementById('main-content')
 const mainPagePos = topSectn.offsetHeight
 mainPage.style.top = mainPagePos
 const footer = document.querySelector('footer');
+
 function openSidebar() {
   document.body.classList.add('no-scroll')
   navbar.classList.add('show-nav')
