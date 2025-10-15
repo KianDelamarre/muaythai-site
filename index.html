@@ -60,12 +60,12 @@
                 </div>
             </a>
 
-            <button id="open-menu-btn" onclick="openSidebar()">
+            <button id="open-menu-btn">
                 <img src="assets/menu.svg" alt="" height="50px">
             </button>
             <nav id="nav-locations">
                 <ul>
-                    <li><button id="close-menu-btn" onclick="closeSidebar()"><img src="assets/close.svg" alt=""
+                    <li><button id="close-menu-btn" class="close-sidebar"><img src="assets/close.svg" alt=""
                                 height="50px"></button></li>
                     <li><a class="nav-btns" href="/" onclick="route(event)">Home</a></li>
                     <li><a class="nav-btns" href="/classes" onclick="route(event)">Classes</a></li>
@@ -75,7 +75,7 @@
                     <li><a class="nav-btns contact-us-btn " href="/contact" onclick="route(event)">CALL US</a></li>
                 </ul>
             </nav>
-            <div id="overlay" onclick="closeSidebar()" aria-hidden="true"></div>
+            <div id="overlay" class="close-sidebar" aria-hidden="true"></div>
         </div>
     </div>
 

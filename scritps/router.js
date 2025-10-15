@@ -41,6 +41,23 @@ const mainPage = document.getElementById('main-content')
 const mainPagePos = topSectn.offsetHeight
 mainPage.style.top = mainPagePos
 const footer = document.querySelector('footer');
+const openMenuBtn = document.getElementById('open-menu-btn')
+openMenuBtn.addEventListener('click', () => {
+  openSidebar()
+})
+// const closeMenuBtn = document.getElementById('close-menu-btn')
+// closeMenuBtn.addEventListener('click', () => {
+//   closeSidebar()
+// })
+
+const closeSideBar = document.querySelectorAll('.close-sidebar')
+closeSideBar.forEach(btn => {
+  btn.addEventListener('click', () => {
+    closeSidebar()
+  })
+})
+
+
 
 function openSidebar() {
   document.body.classList.add('no-scroll')
